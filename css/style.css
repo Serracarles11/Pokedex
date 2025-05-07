@@ -2,12 +2,12 @@ body {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 .todo{
-    display: flex;
+    position: fixed;
+    left: 279.5px;
 }
 .rotomdex{
     /* overflow: hidden; */
@@ -44,8 +44,6 @@ body {
     margin: 50px auto;
     border: black solid 5px;
     overflow: hidden;
-
-
 }
 .boton{
     width: 120px;
@@ -127,3 +125,180 @@ body {
     top: -1040px;
     transform: scaleX(-1);
 }
+.tablet{
+    width: 36%;
+    height: 36%;
+    background-image: url(../img/1dXxMeVIJ-03iuWSMcKHvyOWjAiliEsxWgJmgrp-ucg.png);
+    /* background-position-y: 285px;     */
+    background-size: cover;
+    bottom: 10px;
+    position:fixed;
+    right: 50px;
+    border-radius: 7%;
+    display: flex;
+    border: 10px solid rgb(0, 0, 0);
+    overflow: hidden;
+}
+.parte_abajo_tablet {
+    position: absolute;
+    width: 1%;
+    height: 40%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20%;
+    right: 15.5px;
+    top: 30%;
+    animation: moverDerechaIzquierda 3s linear infinite;
+} 
+@keyframes moverDerechaIzquierda {
+    0% {
+      transform: translateX(200%); /* Comienza fuera por la derecha */
+    }
+    50% {
+      transform: translateX(50); /* Llega a su posición original */
+    }
+    100% {
+      transform: translateX(100); /* Llega a su posición original */
+    }
+}
+  
+
+.parte_arriba_tablet {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 13%;
+    top: 30%;
+    left: -34%;
+}
+.volumen_1{
+    position: fixed;
+    width: 4%;
+    height: 1%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 13%;
+    bottom: 0.7%;
+    right: 31.5%;
+}
+.volumen_2{
+    position: fixed;
+    width: 4%;
+    height: 1%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 13%;
+    bottom: 0.7%;
+    right: 25.5%;
+}
+.info_1{
+    background-image: url(../img/png_cobertura.png);
+    position: absolute;
+    width: 20.5px;
+    background-size: cover;
+    rotate: 270deg;
+    top: 60px;
+    left: 3px;
+    aspect-ratio: 1/1;
+}
+.info_2{
+    background-image: url(../img/charge_4249910.png);
+    position: absolute;
+    width: 28px;
+    background-size: cover;
+    rotate: 270deg;
+    top: 14.5px;
+    left: -1.5px;
+    aspect-ratio: 1/1;
+}
+.reloj{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: -7%;
+    rotate: 270deg;
+    font-size: 2.5em;
+}
+.fecha{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: -2%;
+    rotate: 270deg;
+    font-size: 0.6em;
+}
+.camara{
+    display: flex;
+    position: absolute;
+    top: 11%;
+    right: 6%;
+    rotate: 270deg;
+    width: 41px;
+    aspect-ratio: 1/1;
+    background-color: rgba(57, 57, 57, 0.93);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.camara_1{
+    width: 47%;
+    aspect-ratio: 1/1;
+}
+.pokeball{
+    display: flex;
+    position: absolute;
+    bottom: 11%;
+    right: 6%;
+    rotate: 270deg;
+    width: 41px;
+    aspect-ratio: 1/1;
+    background-color: rgba(57, 57, 57, 0.93);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.pokeball_1{
+    width: 47%;
+    aspect-ratio: 1/1;
+}
+
+
+
+
+/* dadadsad */
+
+
+.lock {
+    position: relative;
+    width: 18px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 34%;    
+
+}
+
+.lock::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    width: 13px;
+    height: 12px;
+    border: 2px solid #ffffff;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-color: rgb(255, 255, 255);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(255, 255, 255);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    background: transparent;
+    rotate: 270deg;
+    top: 2px;
+}
+.candado{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 9%;
+}
+
+
