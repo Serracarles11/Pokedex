@@ -4,13 +4,15 @@ function actualizarHora() {
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
     const segundos = String(ahora.getSeconds()).padStart(2, '0');
     const horaFormateada = `${horas}:${minutos}`;
-    document.getElementById('reloj').textContent = horaFormateada;
-    console.log(reloj);
-}
+    const horaFormateada1 = `${horas}:${minutos}`;
 
+    document.getElementById('reloj').textContent = horaFormateada;
+}
 setInterval(actualizarHora, 1000);
 
 actualizarHora();
+
+
 
 
 function mostrarFechaFormateada() {
@@ -28,3 +30,100 @@ function mostrarFechaFormateada() {
   }
 
   mostrarFechaFormateada();
+
+
+
+
+
+
+
+parte_abajo.addEventListener('click', () => {
+  console.log("Parte abajo clickeada");
+  const tablet = document.getElementById('tablet');
+
+  // Ocultar cosas
+  document.querySelector('.fecha').style.display = 'none';
+  document.querySelector('.reloj').style.display = 'none';
+  document.querySelector('.camara').style.display = 'none';
+  document.querySelector('.pokeball').style.display = 'none';
+
+  // Mostrar los tipos
+  tablet.innerHTML = `
+        <div class="parte_abajo_tablet" id="parte_abajo"></div>
+        <div class="parte_arriba_tablet"></div>
+        <div class="volumen_1"></div>
+        <div class="volumen_2"></div>
+        <div class="info_1"></div>
+        <div class="info_2"></div>
+        <div class="pantalla_uso" id="pantalla_uso">
+
+            <div class="grid">
+                <div class="cuadro">
+                    <img src="img/Icon_water.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_bug.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_fire.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_grass.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_electric.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_poison.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_psychic.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_rock.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_steel.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_dark.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_fairy.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_fighting.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_flying.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_ground.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_ice.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_normal.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_dragon.webp" alt="">
+                </div>
+                <div class="cuadro">
+                    <img src="img/Icon_ghost.webp" alt="">
+                </div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+                <div class="cuadro"></div>
+            </div>
+        </div>
+  `;
+});
+
