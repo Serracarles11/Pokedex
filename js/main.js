@@ -49,7 +49,51 @@ parte_abajo.addEventListener('click', () => {
 
   // Mostrar los tipos
   tablet.innerHTML = `
-        <div class="parte_abajo_tablet" id="parte_abajo"></div>
+    <div class="volumen_1"></div>
+    <div class="volumen_2"></div>
+    <div class="info_1"></div>
+    <div class="info_2"></div>
+    <div class="parte_abajo_tablet" id="parte_abajo"></div>
+    <div class="parte_arriba_tablet"></div>
+    <div class="anterior"></div>
+    <div class="siguiente_pokemon">
+    <img src="img/flecha-hacia-arriba.png" alt="">
+    </div>
+    <div class="anterior_pokemon">
+        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
+    </div>
+
+    <div class="grid_caracteristicas_tablet">
+        <div class="caracteristicas_tablet agua">
+            <img src="img/Icon_ground.webp"class="img_mega" alt="">
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/Gigamax.webp" class="img_mega" alt="">
+
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/grafico-de-barras.png" class="img_mega" alt="">
+        </div>
+    </div>
+
+  `;
+});
+
+
+
+
+const tablet = document.getElementById('tablet');
+
+tablet.addEventListener('click', (e) => {
+  // Detecta si se ha hecho clic en el botón cruz_atras
+  if (e.target.closest('#cruz_atras')) {
+    console.log("Parte abajo clickeada");
+
+    tablet.innerHTML = `
+      <div class="parte_abajo_tablet" id="parte_abajo"></div>
         <div class="parte_arriba_tablet"></div>
         <div class="volumen_1"></div>
         <div class="volumen_2"></div>
@@ -59,58 +103,58 @@ parte_abajo.addEventListener('click', () => {
 
             <div class="grid">
                 <div class="cuadro">
-                    <img src="img/Icon_water.webp" alt="">
+                    <img src="img/Icon_water.webp" id="boton_agua" onclick="createAll('water')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_bug.webp" alt="">
+                    <img src="img/Icon_bug.webp" id="boton_bicho" onclick="createAll('bug')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_fire.webp" alt="">
+                    <img src="img/Icon_fire.webp" id="boton_fuego" onclick="createAll('fire')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_grass.webp" alt="">
+                    <img src="img/Icon_grass.webp" id="boton_planta" onclick="createAll('grass')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_electric.webp" alt="">
+                    <img src="img/Icon_electric.webp" id="boton_electrico" onclick="createAll('electric')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_poison.webp" alt="">
+                    <img src="img/Icon_poison.webp" id="boton_veneno" onclick="createAll('poison')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_psychic.webp" alt="">
+                    <img src="img/Icon_psychic.webp" id="boton_psiquico" onclick="createAll('psychic')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_rock.webp" alt="">
+                    <img src="img/Icon_rock.webp" id="boton_roca" onclick="createAll('rock')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_steel.webp" alt="">
+                    <img src="img/Icon_steel.webp" id="boton_acero" onclick="createAll('steel')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_dark.webp" alt="">
+                    <img src="img/Icon_dark.webp" id="boton_siniestro" onclick="createAll('dark')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_fairy.webp" alt="">
+                    <img src="img/Icon_fairy.webp" id="boton_hada" onclick="createAll('fairy')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_fighting.webp" alt="">
+                    <img src="img/Icon_fighting.webp" id="boton_lucha" onclick="createAll('fighting')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_flying.webp" alt="">
+                    <img src="img/Icon_flying.webp" id="boton_volador" onclick="createAll('flying')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_ground.webp" alt="">
+                    <img src="img/Icon_ground.webp" id="boton_tierra" onclick="createAll('ground')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_ice.webp" alt="">
+                    <img src="img/Icon_ice.webp" id="boton_hielo" onclick="createAll('ice')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_normal.webp" alt="">
+                    <img src="img/Icon_normal.webp" id="boton_normal" onclick="createAll('normal')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_dragon.webp" alt="">
+                    <img src="img/Icon_dragon.webp" id="boton_dragon" onclick="createAll('dragon')">
                 </div>
                 <div class="cuadro">
-                    <img src="img/Icon_ghost.webp" alt="">
+                    <img src="img/Icon_ghost.webp"id="boton_fantasma"  onclick="createAll('ghost')">
                 </div>
                 <div class="cuadro"></div>
                 <div class="cuadro"></div>
@@ -124,6 +168,191 @@ parte_abajo.addEventListener('click', () => {
                 <div class="cuadro"></div>
             </div>
         </div>
-  `;
+    `;
+  }
 });
 
+
+function createAll(tipo){
+    console.log("Parte arriba clickeada");
+    const tablet = document.getElementById('tablet');
+    tablet.innerHTML=``
+    // Mostrar los tipos
+    tablet.innerHTML = `
+    <div class="volumen_1"></div>
+    <div class="volumen_2"></div>
+    <div class="info_1"></div>
+    <div class="info_2"></div>
+    <div class="parte_abajo_tablet" id="parte_abajo"></div>
+    <div class="parte_arriba_tablet"></div>
+    <div class="cruz_atras" id="cruz_atras">
+        <img src="img/cruzado.png" class="img"alt="">
+    </div>
+
+    <div class="anterior"></div>
+    <div class="siguiente_pokemon">
+    <img src="img/flecha-hacia-arriba.png" alt="">
+    </div>
+    <div class="anterior_pokemon">
+        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
+    </div>
+
+    <div class="grid_caracteristicas_tablet">
+        <div class="caracteristicas_tablet agua">
+            <img src="img/Icon_${tipo}.webp"class="img_mega" alt="">
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/Gigamax.webp" class="img_mega" alt="">
+
+        </div>
+        <div class="caracteristicas_tablet">
+            <img src="img/grafico-de-barras.png" class="img_mega" alt="">
+        </div>
+    </div>
+    `;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// cuerpo por tipos
+{/* <div class="cruz_atras" id="cruz_atras">
+<img src="img/cruzado.png" class="img"alt="">
+</div>
+
+<div class="anterior"></div>
+<div class="siguiente_pokemon">
+<img src="img/flecha-hacia-arriba.png" alt="">
+</div>
+<div class="anterior_pokemon">
+<img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
+</div>
+
+<div class="grid_caracteristicas_tablet">
+<div class="caracteristicas_tablet agua">
+    <img src="img/Icon_water.webp"class="img_mega" alt="">
+</div>
+<div class="caracteristicas_tablet">
+    <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
+</div>
+<div class="caracteristicas_tablet">
+    <img src="img/Gigamax.webp" class="img_mega" alt="">
+
+</div>
+<div class="caracteristicas_tablet">
+    <img src="img/grafico-de-barras.png" class="img_mega" alt="">
+</div>
+
+</div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <div class="parte_abajo_tablet" id="parte_abajo"></div>
+// <div class="parte_arriba_tablet"></div>
+// <div class="volumen_1"></div>
+// <div class="volumen_2"></div>
+// <div class="info_1"></div>
+// <div class="info_2"></div>
+// <div class="pantalla_uso" id="pantalla_uso">
+
+//     <div class="grid">
+//         <div class="cuadro">
+//             <img src="img/Icon_water.webp" id="boton_agua" onclick="createAll('water')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_bug.webp" id="boton_bicho" onclick="createAll('bug')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_fire.webp" id="boton_fuego" onclick="createAll('fire')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_grass.webp" id="boton_planta" onclick="createAll('grass')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_electric.webp" id="boton_electrico" onclick="createAll('electric')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_poison.webp" id="boton_veneno" onclick="createAll('poison')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_psychic.webp" id="boton_psiquico" onclick="createAll('psychic')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_rock.webp" id="boton_roca" onclick="createAll('rock')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_steel.webp" id="boton_acero" onclick="createAll('steel')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_dark.webp" id="boton_siniestro" onclick="createAll('dark')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_fairy.webp" id="boton_hada" onclick="createAll('fairy')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_fighting.webp" id="boton_lucha" onclick="createAll('fighting')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_flying.webp" id="boton_volador" onclick="createAll('flying')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_ground.webp" id="boton_tierra" onclick="createAll('ground')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_ice.webp" id="boton_hielo" onclick="createAll('ice')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_normal.webp" id="boton_normal" onclick="createAll('normal')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_dragon.webp" id="boton_dragon" onclick="createAll('dragon')">
+//         </div>
+//         <div class="cuadro">
+//             <img src="img/Icon_ghost.webp"id="boton_fantasma"  onclick="createAll('ghost')">
+//         </div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//         <div class="cuadro"></div>
+//     </div>
+// </div>
