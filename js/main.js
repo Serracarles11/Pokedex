@@ -300,7 +300,7 @@ function createAll(tipo){
 
     <div class="anterior"></div>
     <div class="siguiente_pokemon">
-    <img src="img/flecha-hacia-arriba.png" alt="">
+    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente" onclick="createAll('siguiente')">
     </div>
     <div class="anterior_pokemon">
         <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
@@ -323,6 +323,42 @@ function createAll(tipo){
     </div>
     `;
 }
+
+
+
+
+
+
+
+
+
+function obtenerImagenPokemon(id) {
+  fetch(`/php/db.php?id=${id}`)
+    .then(response => {
+      if (!response.ok) throw new Error("Error en la respuesta del servidor");
+      return response.json();  // Parseamos la respuesta JSON
+    })
+    .then(data => {
+    //   console.log(data); // Esto te permite ver la respuesta completa de la API
+      if (data.imagen) {
+        const pantalla = document.getElementById('pantalla');
+//aqui esta el pokemon
+        pantalla.innerHTML = `
+          <div class="pokemon">
+              <img src="${data.imagen}" alt="" class="imagen_pokemon">
+          </div>
+        `;
+        if (imagenElemento) {
+          imagenElemento.src = data.imagen;
+        }
+      } else {
+        console.error("No se encontró la imagen del Pokémon");
+      }
+    })
+    .catch(error => console.error("Error:", error));
+}
+let idActual = 1;
+obtenerImagenPokemon(idActual); // Llamada a la función para obtener la imagen
 
 
 
