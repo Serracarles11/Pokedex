@@ -47,6 +47,11 @@ body {
     display:flex ;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+.nombre_pokemon_pokedex{
+    position: absolute;
+    top: 6%;
 }
 .boton{
     width: 120px;

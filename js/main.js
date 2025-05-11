@@ -57,15 +57,15 @@ parte_abajo.addEventListener('click', () => {
     <div class="parte_arriba_tablet"></div>
     <div class="anterior"></div>
     <div class="siguiente_pokemon">
-    <img src="img/flecha-hacia-arriba.png" alt="">
+    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente">
     </div>
     <div class="anterior_pokemon">
-        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
+        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="" id="anterior">
     </div>
 
     <div class="grid_caracteristicas_tablet">
         <div class="caracteristicas_tablet agua">
-            <img src="img/c40c726b124c964055f7798279ba74e5-removebg-preview.png"class="img_mega2" id="todo_tipos">
+            <img src="${data.imagen}" class="img_mega2" id="todo_tipos">
         </div>
         <div class="caracteristicas_tablet">
             <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
@@ -300,10 +300,10 @@ function createAll(tipo){
 
     <div class="anterior"></div>
     <div class="siguiente_pokemon">
-    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente" onclick="createAll('siguiente')">
+    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente">
     </div>
     <div class="anterior_pokemon">
-        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
+        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="" id="anterior">
     </div>
 
     <div class="grid_caracteristicas_tablet">
@@ -339,11 +339,14 @@ function obtenerImagenPokemon(id) {
       return response.json();  // Parseamos la respuesta JSON
     })
     .then(data => {
-    //   console.log(data); // Esto te permite ver la respuesta completa de la API
+    console.log(data); // Esto te permite ver la respuesta completa de la API
       if (data.imagen) {
         const pantalla = document.getElementById('pantalla');
 //aqui esta el pokemon
         pantalla.innerHTML = `
+        <div class="nombre_pokemon_pokedex">
+            <h1>${data.nombre}</h1>
+        </div>
           <div class="pokemon">
               <img src="${data.imagen}" alt="" class="imagen_pokemon">
           </div>
@@ -362,8 +365,24 @@ obtenerImagenPokemon(idActual); // Llamada a la función para obtener la imagen
 
 
 
+const siguiente = document.getElementById("siguiente");
 
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'siguiente') {
+    idActual++;
+    obtenerImagenPokemon(idActual);
 
+}
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'anterior') {
+    if (idActual >= 1) {
+      idActual--;
+      obtenerImagenPokemon(idActual);
+    }
+  }
+});
 
 
 
