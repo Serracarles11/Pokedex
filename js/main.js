@@ -64,8 +64,8 @@ parte_abajo.addEventListener('click', () => {
     </div>
 
     <div class="grid_caracteristicas_tablet">
-        <div class="caracteristicas_tablet agua">
-            <img src="${data.imagen}" class="img_mega2" id="todo_tipos">
+        <div class="caracteristicas_tablet agua" id="todo_tipos">
+            <img src="img/Icon_grass.webp" class="img_mega2" >
         </div>
         <div class="caracteristicas_tablet">
             <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
@@ -284,7 +284,72 @@ tablet.addEventListener('click', (e) => {
 
 function createAll(tipo){
     console.log("Parte arriba clickeada");
+    const pantalla = document.getElementById('pantalla');
+    
+function obtenerPokemonsPorTipo(tipo) {
+    fetch(`/php/pokemon_por_tipo.php?tipo=${tipo}`)
+        .then(response => response.json())
+        .then(data => {
+            const nombre_pokemon_tipo = document.getElementById('nombre_pokemon_tipo');
+            const pokemon_tipo = document.getElementById('pokemon_tipo');
+
+            // Limpiar los elementos de la página antes de insertar los nuevos datos
+            nombre_pokemon_tipo.innerHTML = '';
+            pokemon_tipo.innerHTML = '';
+
+            if (data.length > 0) {
+                // Iterar sobre los Pokémon que hemos recibido
+                data.forEach(pokemon => {
+                    // Mostrar los nombres de los Pokémon
+                    
+                    // Insertar las imágenes de los Pokémon
+                    pokemon_tipo.innerHTML += `
+                        <div class="pokemon-item">
+                            <h2>${pokemon.nombre}</h2>
+                            <img src="${pokemon.imagen}" alt="${pokemon.nombre}" />
+                        </div>
+                    `;
+                });
+            } else {
+                // Si no hay resultados, mostrar un mensaje
+                pokemon_tipo.innerHTML = '<p>No se encontraron Pokémon de este tipo.</p>';
+            }
+            const siguiente_tipo = document.getElementById("siguiente_tipo");
+
+            siguiente_tipo.addEventListener('click', function (e) {
+            if (idActual < data.length - 1) {
+                idActual++;
+                obtenerPokemonsPorTipo(`${tipo}`);
+
+            }
+            });
+
+            document.addEventListener('click', function (e) {
+            if (e.target && e.target.id === 'anterior_tipo') {
+                if (idActual >= 1) {
+                idActual--;
+                obtenerPokemonsPorTipo(`${tipo}`);
+                }
+            }
+            });
+
+        })
+        .catch(error => console.error("Error al obtener los Pokémon:", error));
+}
+
+// Llamar a la función con el tipo que desees
+obtenerPokemonsPorTipo(`${tipo}`);
+
+    pantalla.innerHTML = `
+        <div class="nombre_pokemon_pokedex" id="nombre_pokemon_tipo">
+        </div>
+        <div class="pokemon" id="pokemon_tipo">
+        </div>`;
+
+
+
     const tablet = document.getElementById('tablet');
+
     tablet.innerHTML=``
     // Mostrar los tipos
     tablet.innerHTML = `
@@ -300,10 +365,10 @@ function createAll(tipo){
 
     <div class="anterior"></div>
     <div class="siguiente_pokemon">
-    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente">
+    <img src="img/flecha-hacia-arriba.png" alt="" id="siguiente_tipo">
     </div>
     <div class="anterior_pokemon">
-        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="" id="anterior">
+        <img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="" id="anterior_tipo">
     </div>
 
     <div class="grid_caracteristicas_tablet">
@@ -336,30 +401,45 @@ function obtenerImagenPokemon(id) {
   fetch(`/php/db.php?id=${id}`)
     .then(response => {
       if (!response.ok) throw new Error("Error en la respuesta del servidor");
-      return response.json();  // Parseamos la respuesta JSON
+      return response.json();  
     })
     .then(data => {
-    console.log(data); // Esto te permite ver la respuesta completa de la API
+      console.log(data); 
+
       if (data.imagen) {
         const pantalla = document.getElementById('pantalla');
-//aqui esta el pokemon
         pantalla.innerHTML = `
-        <div class="nombre_pokemon_pokedex">
-            <h1>${data.nombre}</h1>
-        </div>
+          <div class="nombre_pokemon_pokedex">
+              <h1>${data.nombre}</h1>
+          </div>
           <div class="pokemon">
               <img src="${data.imagen}" alt="" class="imagen_pokemon">
           </div>
         `;
-        if (imagenElemento) {
-          imagenElemento.src = data.imagen;
-        }
       } else {
         console.error("No se encontró la imagen del Pokémon");
+      }
+
+      if (data.tipo) {
+        
+        const todo_tipos = document.getElementById('todo_tipos');
+
+        if (todo_tipos) {
+          todo_tipos.innerHTML = `
+          `;
+          todo_tipos.innerHTML = `
+            <img src="img/Icon_${data.tipo}.webp" class="img_mega2" >
+          `;
+        console.log(data.tipo);
+
+        }
+      } else {
+        console.error("No se encontró el tipo del Pokémon");
       }
     })
     .catch(error => console.error("Error:", error));
 }
+
 let idActual = 1;
 obtenerImagenPokemon(idActual); // Llamada a la función para obtener la imagen
 
@@ -391,132 +471,3 @@ document.addEventListener('click', function (e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// cuerpo por tipos
-{/* <div class="cruz_atras" id="cruz_atras">
-<img src="img/cruzado.png" class="img"alt="">
-</div>
-
-<div class="anterior"></div>
-<div class="siguiente_pokemon">
-<img src="img/flecha-hacia-arriba.png" alt="">
-</div>
-<div class="anterior_pokemon">
-<img src="img/flecha-hacia-arriba.png" class="img_izquierda" alt="">
-</div>
-
-<div class="grid_caracteristicas_tablet">
-<div class="caracteristicas_tablet agua">
-    <img src="img/Icon_water.webp"class="img_mega" alt="">
-</div>
-<div class="caracteristicas_tablet">
-    <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
-</div>
-<div class="caracteristicas_tablet">
-    <img src="img/Gigamax.webp" class="img_mega" alt="">
-
-</div>
-<div class="caracteristicas_tablet">
-    <img src="img/grafico-de-barras.png" class="img_mega" alt="">
-</div>
-
-</div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div class="parte_abajo_tablet" id="parte_abajo"></div>
-// <div class="parte_arriba_tablet"></div>
-// <div class="volumen_1"></div>
-// <div class="volumen_2"></div>
-// <div class="info_1"></div>
-// <div class="info_2"></div>
-// <div class="pantalla_uso" id="pantalla_uso">
-
-//     <div class="grid">
-//         <div class="cuadro">
-//             <img src="img/Icon_water.webp" id="boton_agua" onclick="createAll('water')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_bug.webp" id="boton_bicho" onclick="createAll('bug')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_fire.webp" id="boton_fuego" onclick="createAll('fire')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_grass.webp" id="boton_planta" onclick="createAll('grass')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_electric.webp" id="boton_electrico" onclick="createAll('electric')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_poison.webp" id="boton_veneno" onclick="createAll('poison')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_psychic.webp" id="boton_psiquico" onclick="createAll('psychic')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_rock.webp" id="boton_roca" onclick="createAll('rock')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_steel.webp" id="boton_acero" onclick="createAll('steel')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_dark.webp" id="boton_siniestro" onclick="createAll('dark')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_fairy.webp" id="boton_hada" onclick="createAll('fairy')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_fighting.webp" id="boton_lucha" onclick="createAll('fighting')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_flying.webp" id="boton_volador" onclick="createAll('flying')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_ground.webp" id="boton_tierra" onclick="createAll('ground')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_ice.webp" id="boton_hielo" onclick="createAll('ice')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_normal.webp" id="boton_normal" onclick="createAll('normal')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_dragon.webp" id="boton_dragon" onclick="createAll('dragon')">
-//         </div>
-//         <div class="cuadro">
-//             <img src="img/Icon_ghost.webp"id="boton_fantasma"  onclick="createAll('ghost')">
-//         </div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//         <div class="cuadro"></div>
-//     </div>
-// </div>
