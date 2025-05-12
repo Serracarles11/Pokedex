@@ -37,6 +37,38 @@ function mostrarFechaFormateada() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 parte_abajo.addEventListener('click', () => {
   console.log("Parte abajo clickeada");
   const tablet = document.getElementById('tablet');
@@ -68,10 +100,10 @@ parte_abajo.addEventListener('click', () => {
             <img src="img/Icon_grass.webp" class="img_mega2" >
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Mega_Evolution_icon.webp" class="img_mega" id="boton_mega">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega3" id="boton_mega">
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Gigamax.webp" class="img_mega" alt="">
+            <img src="img/Gigamax.webp" class="img_mega" id="boton_gigamax">
 
         </div>
         <div class="caracteristicas_tablet">
@@ -157,19 +189,8 @@ tablet.addEventListener('click', (e) => {
                 <div class="cuadro">
                     <img src="img/Icon_ghost.webp"id="boton_fantasma"  onclick="createAll('ghost')">
                 </div>
-                <div class="cuadro">
-                    <img src="img/c40c726b124c964055f7798279ba74e5-removebg-preview.png"id="todo_tipos">
-                </div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
+
+
             </div>
         </div>
     `;
@@ -190,10 +211,14 @@ tablet.addEventListener('click', (e) => {
 
 
 
+
+
 tablet.addEventListener('click', (e) => {
   // Detecta si se ha hecho clic en el botón cruz_atras
   if (e.target.closest('#todo_tipos')) {
+    const tablet = document.getElementById('tablet'); // o el ID que uses
 
+    tablet.innerHTML = ``
     tablet.innerHTML = `
       <div class="parte_abajo_tablet" id="parte_abajo"></div>
         <div class="parte_arriba_tablet"></div>
@@ -258,19 +283,6 @@ tablet.addEventListener('click', (e) => {
                 <div class="cuadro">
                     <img src="img/Icon_ghost.webp"id="boton_fantasma"  onclick="createAll('ghost')">
                 </div>
-                <div class="cuadro">
-                    <img src="img/c40c726b124c964055f7798279ba74e5-removebg-preview.png"id="todo_tipos" onclick="createAll('todo_tipos')">
-                </div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
-                <div class="cuadro"></div>
             </div>
         </div>
     `;
@@ -316,17 +328,18 @@ function createAll(tipo){
 
       const pantalla = document.getElementById('pantalla');
       if (index >= 0 && index < pokemons.length) {
-
-        const pokemon = pokemons[index];
+        const pokemon1 = pokemons[index];
         
         pantalla.innerHTML = `
           <div class="nombre_pokemon_pokedex">
-            <h1>${pokemon.nombre}</h1>
+            <h1>${pokemon1.nombre}</h1>
           </div>
           <div class="pokemon">
-            <img src="${pokemon.imagen}" alt="${pokemon.nombre}" class="imagen_pokemon">
+            <img src="${pokemon1.imagen}" alt="${pokemon1.nombre}" class="imagen_pokemon">
           </div>
         `;
+      pokemon=`${pokemon1.nombre}`;
+
       } else {
         console.error("Índice fuera de rango.");
       }
@@ -336,18 +349,20 @@ function createAll(tipo){
     document.addEventListener('click', function (e) {
       if (e.target && e.target.id === 'siguiente_tipo') {
         if (idActual < pokemons.length - 1) {
+            idActual++;  // Incrementamos el índice para el siguiente Pokémon
+
             mostrarPokemon(idActual);
 
-          idActual++;  // Incrementamos el índice para el siguiente Pokémon
         } else {
           console.log("No hay más Pokémon en este tipo.");
         }
       }
     
-      if (e.target && e.target.id === 'anterior') {
+      if (e.target && e.target.id === 'anterior_tipo') {
         if (idActual > 0) {  // Aseguramos que no se pueda ir a un índice menor a 0
-          mostrarPokemon(idActual);
           idActual--;  // Decrementamos el índice para el Pokémon anterior
+
+          mostrarPokemon(idActual);
 
         } else {
           console.log("Ya estás en el primer Pokémon.");
@@ -389,18 +404,47 @@ function createAll(tipo){
             <img src="img/Icon_${tipo}.webp"class="img_mega" alt="">
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Mega_Evolution_icon.webp" class="img_mega" id="boton_mega">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega3" id="boton_mega">
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Gigamax.webp" class="img_mega" alt="">
+            <img src="img/Gigamax.webp" class="img_mega" id="boton_gigamax">
 
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/grafico-de-barras.png" class="img_mega" alt="">
+            <img src="img/grafico-de-barras.png" class="img_mega" id="boton_estadisticas" >
         </div>
     </div>
     `;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -492,39 +536,178 @@ document.addEventListener('click', function (e) {
 
 
 
+
+
+
+
+let esMega = false;
+let megaIndex = 0;
+let lastPokemon = null;
+
+// Aquí defines para cada Pokémon sus sufijos “mega” disponibles.
+// Si no está, asumimos que sólo tiene una Mega genérica.
+const megaVariants = {
+  charizard: ['x', 'y'],
+  // añade otros si quieres:
+  // mewtwo: ['x', 'y'],
+  // gardevoir: [''],
+};
+
 function obtenerMega(nombre) {
-    const nombreMega = `${nombre.toLowerCase().trim()}-mega`;
-  
-    fetch(`/php/ensenyar_megaevolucion.php?nombre=${encodeURIComponent(nombreMega)}`)
-      .then(response => {
-        if (!response.ok) throw new Error("Error en la respuesta del servidor");
-        return response.json();  
-      })
-      .then(data => {
-        console.log(data); 
-    
-        if (data && data.nombre && data.imagen) {
-          console.log(`${data.nombre}`);
-          const pantalla = document.getElementById('pantalla');
-          pantalla.innerHTML = `
-            <div class="nombre_pokemon_pokedex">
-                <h1>${data.nombre}</h1>
-            </div>
-            <div class="pokemon">
-                <img src="${data.imagen}" alt="" class="imagen_pokemon">
-            </div>
-          `;
-        } else {
-          console.error("No se encontró la megaevolución del Pokémon");
-        }
-      })
-      .catch(error => console.error("Error:", error));
+  const key = nombre.toLowerCase().trim();
+  const variants = megaVariants[key] || [''];        // sufijos a iterar
+  // Si cambiamos de Pokémon, reiniciamos el índice:
+  if (lastPokemon !== key) {
+    megaIndex = 0;
+    lastPokemon = key;
   }
-  document.getElementById('boton_mega').addEventListener('click', function () {
-    if (pokemon) {
-      obtenerMega(pokemon);
-    } else {
-      console.error("Variable 'pokemon' no definida o vacía");
+  // Ajustamos el índice para que no desborde:
+  if (megaIndex >= variants.length) {
+    megaIndex = 0;
+  }
+
+  // Construimos el nombre de la forma concreta:
+  const sufijo = variants[megaIndex];
+  const nombreMega = sufijo
+    ? `${key}-mega-${sufijo}`
+    : `${key}-mega`;
+
+  console.log(
+    `Buscando Mega para "${nombre}" → query="${nombreMega}" (índice ${megaIndex}/${variants.length})`
+  );
+
+  fetch(`/php/ensenyar_megaevolucion.php?nombre=${encodeURIComponent(nombreMega)}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Respuesta no OK del servidor");
+      return res.json();
+    })
+    .then(data => {
+      console.log("Respuesta del servidor:", data);
+
+      if (!Array.isArray(data) || data.length === 0) {
+        alert(`${nombre} no tiene la variante "${nombreMega}".`);
+        return;
+      }
+
+      // Usamos siempre la primera (normalmente tu PHP devuelve sólo esa):
+      const mega = data[0];
+      console.log("Pintando Mega:", mega);
+      esMega = true;
+      megaIndex++;  // preparamos la siguiente variante
+
+      document.getElementById('pantalla').innerHTML = `
+        <div class="nombre_pokemon_pokedex">
+          <h1>${mega.nombre}</h1>
+        </div>
+        <div class="pokemon">
+          <img src="${mega.imagen}" alt="${mega.nombre}" class="imagen_pokemon">
+        </div>
+      `;
+    })
+    .catch(err => {
+      console.error("Error fetch:", err);
+      alert("Error al buscar la MegaEvolución.");
+    });
+}
+
+document.addEventListener('click', e => {
+  if (e.target && e.target.id === 'boton_mega') {
+    if (!pokemon) {
+      alert("Selecciona un Pokémon primero.");
+      return;
     }
-  });
-    
+    obtenerMega(pokemon);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let esGigamax = false;
+let ultimoPokemonGigamax = null;
+
+function obtenerGigamax(nombre) {
+  const key = nombre.toLowerCase().trim();
+  const nombreGigamax = `${key}-gmax`;
+
+  // Si es un Pokémon nuevo, reseteamos el estado
+  if (ultimoPokemonGigamax !== key) {
+    esGigamax = false;
+    ultimoPokemonGigamax = key;
+  }
+
+  // Si ya está en forma Gigamax, volvemos a la forma normal
+  if (esGigamax) {
+    obtenerPokemonNormal(nombre); // Asegúrate de tener esta función definida
+    esGigamax = false;
+    return;
+  }
+
+  console.log(`Buscando forma Gigamax: ${nombreGigamax}`);
+
+  fetch(`/php/sacar_gigamax.php?nombre2=${encodeURIComponent(nombreGigamax)}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Respuesta no OK del servidor");
+      return res.json();
+    })
+    .then(data => {
+      console.log("Respuesta del servidor:", data);
+
+      if (!Array.isArray(data) || data.length === 0 || data.error) {
+        alert(`${nombre} no tiene forma Gigamax.`);
+        return;
+      }
+
+      const gmax = data[0];
+      esGigamax = true;
+
+      document.getElementById('pantalla').innerHTML = `
+        <div class="nombre_pokemon_pokedex">
+          <h1>${gmax.nombre}</h1>
+        </div>
+        <div class="pokemon">
+          <img src="${gmax.imagen}" alt="${gmax.nombre}" class="imagen_pokemon">
+        </div>
+      `;
+    })
+    .catch(err => {
+      console.error("Error fetch:", err);
+      alert("Error al buscar la forma Gigamax.");
+    });
+}
+
+document.addEventListener('click', e => {
+  if (e.target && e.target.id === 'boton_gigamax') {
+    if (!pokemon) {
+      alert("Selecciona un Pokémon primero.");
+      return;
+    }
+    obtenerGigamax(pokemon);
+  }
+});

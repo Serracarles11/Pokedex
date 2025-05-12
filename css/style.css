@@ -424,6 +424,9 @@ img{
 .img_mega2{
     width: 50%;
 }
+.img_mega3{
+    width: 50%;
+}
 .cruz_atras{
     position: absolute;
     width: 10%;
@@ -437,4 +440,13 @@ img{
 .imagen_pokemon{
     width:16vh;
     aspect-ratio: 1;
+}
+#buscar_pokemon_nombre {
+  width: 150px;
+  height: 150px;
+  font-size: 16px;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
