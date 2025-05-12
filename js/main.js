@@ -68,7 +68,7 @@ parte_abajo.addEventListener('click', () => {
             <img src="img/Icon_grass.webp" class="img_mega2" >
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega" id="boton_mega">
         </div>
         <div class="caracteristicas_tablet">
             <img src="img/Gigamax.webp" class="img_mega" alt="">
@@ -293,8 +293,11 @@ function createAll(tipo){
         .then(response => {
           if (!response.ok) throw new Error("Error en la respuesta del servidor");
           return response.json();  
+          
         })
+        
         .then(data => {
+
           console.log(data); // Ver los datos de respuesta
     
           if (data && data.length > 0) {
@@ -303,14 +306,19 @@ function createAll(tipo){
           } else {
             console.error("No se encontró el Pokémon");
           }
+          
         })
         .catch(error => console.error("Error:", error));
+        
     }
     
     function mostrarPokemon(index) {
+
       const pantalla = document.getElementById('pantalla');
       if (index >= 0 && index < pokemons.length) {
+
         const pokemon = pokemons[index];
+        
         pantalla.innerHTML = `
           <div class="nombre_pokemon_pokedex">
             <h1>${pokemon.nombre}</h1>
@@ -381,7 +389,7 @@ function createAll(tipo){
             <img src="img/Icon_${tipo}.webp"class="img_mega" alt="">
         </div>
         <div class="caracteristicas_tablet">
-            <img src="img/Mega_Evolution_icon.webp" class="img_mega" alt="">
+            <img src="img/Mega_Evolution_icon.webp" class="img_mega" id="boton_mega">
         </div>
         <div class="caracteristicas_tablet">
             <img src="img/Gigamax.webp" class="img_mega" alt="">
@@ -401,6 +409,7 @@ function createAll(tipo){
 
 
 
+let pokemon;
 
 function obtenerImagenPokemon(id) {
   fetch(`/php/db.php?id=${id}`)
@@ -412,6 +421,8 @@ function obtenerImagenPokemon(id) {
       console.log(data); 
 
       if (data.imagen) {
+        pokemon=`${data.nombre}`;
+
         const pantalla = document.getElementById('pantalla');
         pantalla.innerHTML = `
           <div class="nombre_pokemon_pokedex">
@@ -444,6 +455,9 @@ function obtenerImagenPokemon(id) {
     })
     .catch(error => console.error("Error:", error));
 }
+
+console.log(pokemon);  // Ahora puedes obtener el valor de pokemon después de la asignación
+
 
 let idActual = 1;
 obtenerImagenPokemon(idActual); // Llamada a la función para obtener la imagen
@@ -478,7 +492,39 @@ document.addEventListener('click', function (e) {
 
 
 
-
-
-
-
+function obtenerMega(nombre) {
+    const nombreMega = `${nombre.toLowerCase().trim()}-mega`;
+  
+    fetch(`/php/ensenyar_megaevolucion.php?nombre=${encodeURIComponent(nombreMega)}`)
+      .then(response => {
+        if (!response.ok) throw new Error("Error en la respuesta del servidor");
+        return response.json();  
+      })
+      .then(data => {
+        console.log(data); 
+    
+        if (data && data.nombre && data.imagen) {
+          console.log(`${data.nombre}`);
+          const pantalla = document.getElementById('pantalla');
+          pantalla.innerHTML = `
+            <div class="nombre_pokemon_pokedex">
+                <h1>${data.nombre}</h1>
+            </div>
+            <div class="pokemon">
+                <img src="${data.imagen}" alt="" class="imagen_pokemon">
+            </div>
+          `;
+        } else {
+          console.error("No se encontró la megaevolución del Pokémon");
+        }
+      })
+      .catch(error => console.error("Error:", error));
+  }
+  document.getElementById('boton_mega').addEventListener('click', function () {
+    if (pokemon) {
+      obtenerMega(pokemon);
+    } else {
+      console.error("Variable 'pokemon' no definida o vacía");
+    }
+  });
+    
