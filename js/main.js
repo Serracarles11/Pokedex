@@ -285,67 +285,72 @@ tablet.addEventListener('click', (e) => {
 function createAll(tipo){
     console.log("Parte arriba clickeada");
     const pantalla = document.getElementById('pantalla');
+    let idActual = 0; // Inicializar el ID actual del Pokémon
+    let pokemons = []; // Array para almacenar los Pokémon recibidos
     
-function obtenerPokemonsPorTipo(tipo) {
-    fetch(`/php/pokemon_por_tipo.php?tipo=${tipo}`)
-        .then(response => response.json())
-        .then(data => {
-            const nombre_pokemon_tipo = document.getElementById('nombre_pokemon_tipo');
-            const pokemon_tipo = document.getElementById('pokemon_tipo');
-
-            // Limpiar los elementos de la página antes de insertar los nuevos datos
-            nombre_pokemon_tipo.innerHTML = '';
-            pokemon_tipo.innerHTML = '';
-
-            if (data.length > 0) {
-                // Iterar sobre los Pokémon que hemos recibido
-                data.forEach(pokemon => {
-                    // Mostrar los nombres de los Pokémon
-                    
-                    // Insertar las imágenes de los Pokémon
-                    pokemon_tipo.innerHTML += `
-                        <div class="pokemon-item">
-                            <h2>${pokemon.nombre}</h2>
-                            <img src="${pokemon.imagen}" alt="${pokemon.nombre}" />
-                        </div>
-                    `;
-                });
-            } else {
-                // Si no hay resultados, mostrar un mensaje
-                pokemon_tipo.innerHTML = '<p>No se encontraron Pokémon de este tipo.</p>';
-            }
-            const siguiente_tipo = document.getElementById("siguiente_tipo");
-
-            siguiente_tipo.addEventListener('click', function (e) {
-            if (idActual < data.length - 1) {
-                idActual++;
-                obtenerPokemonsPorTipo(`${tipo}`);
-
-            }
-            });
-
-            document.addEventListener('click', function (e) {
-            if (e.target && e.target.id === 'anterior_tipo') {
-                if (idActual >= 1) {
-                idActual--;
-                obtenerPokemonsPorTipo(`${tipo}`);
-                }
-            }
-            });
-
+    function obtenerPokemonTipo(tipo) {
+      fetch(`/php/pokemon_por_tipo.php?tipo=${tipo}`)
+        .then(response => {
+          if (!response.ok) throw new Error("Error en la respuesta del servidor");
+          return response.json();  
         })
-        .catch(error => console.error("Error al obtener los Pokémon:", error));
-}
+        .then(data => {
+          console.log(data); // Ver los datos de respuesta
+    
+          if (data && data.length > 0) {
+            pokemons = data;  // Almacenamos los Pokémon recibidos en el array
+            mostrarPokemon(idActual);  // Mostrar el primer Pokémon
+          } else {
+            console.error("No se encontró el Pokémon");
+          }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+    
+    function mostrarPokemon(index) {
+      const pantalla = document.getElementById('pantalla');
+      if (index >= 0 && index < pokemons.length) {
+        const pokemon = pokemons[index];
+        pantalla.innerHTML = `
+          <div class="nombre_pokemon_pokedex">
+            <h1>${pokemon.nombre}</h1>
+          </div>
+          <div class="pokemon">
+            <img src="${pokemon.imagen}" alt="${pokemon.nombre}" class="imagen_pokemon">
+          </div>
+        `;
+      } else {
+        console.error("Índice fuera de rango.");
+      }
+    }
+    
+    // Evento para cambiar al siguiente Pokémon
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.id === 'siguiente_tipo') {
+        if (idActual < pokemons.length - 1) {
+            mostrarPokemon(idActual);
 
-// Llamar a la función con el tipo que desees
-obtenerPokemonsPorTipo(`${tipo}`);
+          idActual++;  // Incrementamos el índice para el siguiente Pokémon
+        } else {
+          console.log("No hay más Pokémon en este tipo.");
+        }
+      }
+    
+      if (e.target && e.target.id === 'anterior') {
+        if (idActual > 0) {  // Aseguramos que no se pueda ir a un índice menor a 0
+          mostrarPokemon(idActual);
+          idActual--;  // Decrementamos el índice para el Pokémon anterior
 
-    pantalla.innerHTML = `
-        <div class="nombre_pokemon_pokedex" id="nombre_pokemon_tipo">
-        </div>
-        <div class="pokemon" id="pokemon_tipo">
-        </div>`;
-
+        } else {
+          console.log("Ya estás en el primer Pokémon.");
+        }
+      }
+    });
+    
+    // Llamada inicial para cargar el primer tipo de Pokém    
+    
+      
+      obtenerPokemonTipo(`${tipo}`); // Llamada a la función para obtener la imagen
 
 
     const tablet = document.getElementById('tablet');
@@ -463,6 +468,12 @@ document.addEventListener('click', function (e) {
     }
   }
 });
+
+
+
+
+
+
 
 
 
