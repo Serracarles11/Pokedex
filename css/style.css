@@ -434,3 +434,7 @@ img{
     height: 50%;
     background-color: #00a;
 }
+.imagen_pokemon{
+    width:16vh;
+    aspect-ratio: 1;
+}
