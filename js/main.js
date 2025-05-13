@@ -475,6 +475,9 @@ function obtenerImagenPokemon(id) {
           <div class="pokemon">
               <img src="${data.imagen}" alt="" class="imagen_pokemon">
           </div>
+          <div class="pokemon_id_pokedex">
+            <h1>${data.id}</h1>
+          </div>
         `;
       } else {
         console.error("No se encontró la imagen del Pokémon");
@@ -619,22 +622,6 @@ document.addEventListener('click', e => {
     obtenerMega(pokemon);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

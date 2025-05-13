@@ -50,8 +50,8 @@ body {
     text-align: center;
 }
 .nombre_pokemon_pokedex{
-    position: absolute;
-    top: 6%;
+    position: relative;
+    top: 20px;
 }
 .boton{
     width: 120px;
@@ -357,7 +357,7 @@ width: 87%;
   aspect-ratio: 1 / 1; 
   border-radius: 10px;
   transition: transform 0.2s;
-padding-right: 5px; 
+    padding-right: 5px; 
 
 }
 
