@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 $nombre2 = isset($_GET['nombre2']) ? $conn->real_escape_string($_GET['nombre2']) : '';
 
-// Consulta exacta: nombre debe coincidir con "pokemon-gigantamax"
+// Consulta exacta: nombre debe coincidir parcialmente
 $sql = "SELECT * FROM FormasEspeciales WHERE nombre LIKE CONCAT('%', ?, '%')";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $nombre2);
@@ -29,14 +29,14 @@ while ($row = $result->fetch_assoc()) {
     $pokemons[] = [
         "imagen" => $row['imagen'],
         "tipo"   => $row['tipo'],
-        "nombre" => $row['nombre']
+        "nombre" => $row['nombre'],
+        "id"     => $row['id']
     ];
 }
 
 if (!empty($pokemons)) {
     echo json_encode($pokemons);
 } else {
-    // Mantenemos estructura consistente para el cliente
     echo json_encode([]);
 }
 

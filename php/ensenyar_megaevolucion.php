@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 
 $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
 
-$sql = "SELECT nombre, imagen, tipo FROM FormasEspeciales WHERE nombre = ?";
+$sql = "SELECT nombre, imagen, tipo, id FROM FormasEspeciales WHERE nombre = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $nombre);
 $stmt->execute();
@@ -30,7 +30,8 @@ while ($row = $result->fetch_assoc()) {
     $pokemons[] = [
         "nombre" => $row['nombre'],
         "imagen" => $row['imagen'],
-        "tipo" => $row['tipo']
+        "tipo" => $row['tipo'],
+        "id" => $row['id']
     ];
 }
 
@@ -42,4 +43,3 @@ if (!empty($pokemons)) {
 
 $conn->close();
 ?>
-

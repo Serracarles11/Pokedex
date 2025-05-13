@@ -106,9 +106,7 @@ parte_abajo.addEventListener('click', () => {
             <img src="img/Gigamax.webp" class="img_mega" id="boton_gigamax">
 
         </div>
-        <div class="caracteristicas_tablet">
-            <img src="img/grafico-de-barras.png" class="img_mega" alt="">
-        </div>
+
     </div>
 
   `;
@@ -335,7 +333,10 @@ function createAll(tipo){
             <h1>${pokemon1.nombre}</h1>
           </div>
           <div class="pokemon">
-            <img src="${pokemon1.imagen}" alt="${pokemon1.nombre}" class="imagen_pokemon">
+            <img src="${pokemon1.imagen}"class="imagen_pokemon">
+          </div>
+            <div class="pokemon_id_pokedex">
+            <h1>${pokemon1.id}</h1>
           </div>
         `;
       pokemon=`${pokemon1.nombre}`;
@@ -410,9 +411,6 @@ function createAll(tipo){
             <img src="img/Gigamax.webp" class="img_mega" id="boton_gigamax">
 
         </div>
-        <div class="caracteristicas_tablet">
-            <img src="img/grafico-de-barras.png" class="img_mega" id="boton_estadisticas" >
-        </div>
     </div>
     `;
 }
@@ -478,6 +476,7 @@ function obtenerImagenPokemon(id) {
           <div class="pokemon_id_pokedex">
             <h1>${data.id}</h1>
           </div>
+          
         `;
       } else {
         console.error("No se encontró la imagen del Pokémon");
@@ -603,7 +602,10 @@ function obtenerMega(nombre) {
           <h1>${mega.nombre}</h1>
         </div>
         <div class="pokemon">
-          <img src="${mega.imagen}" alt="${mega.nombre}" class="imagen_pokemon">
+          <img src="${mega.imagen}" class="imagen_pokemon">
+        </div>
+        <div class="pokemon_id_pokedex">
+          <h1>${mega.id}</h1>
         </div>
       `;
     })
@@ -679,7 +681,10 @@ function obtenerGigamax(nombre) {
           <h1>${gmax.nombre}</h1>
         </div>
         <div class="pokemon">
-          <img src="${gmax.imagen}" alt="${gmax.nombre}" class="imagen_pokemon">
+          <img src="${gmax.imagen}"class="imagen_pokemon">
+        </div>
+        <div class="pokemon_id_pokedex">
+          <h1>${gmax.id}</h1>
         </div>
       `;
     })
@@ -705,9 +710,3 @@ document.addEventListener('click', e => {
 
 
 
-document.getElementById('pantalla').innerHTML = `
-  <div class="tabla_estadisticas">
-   <div class="detalles_pokemon_pokedex">
-    <a class="descripcion_pokemon"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, asperiores facere amet quaerat repellat officia voluptatem dolor alias accusamus iste quibusdam ratione dolorum facilis aliquam tempore laudantium minima, corrupti fugiat. Veritatis omnis, possimus distinctio minus, animi obcaecati voluptas nihil hic laudantium dolores autem iure ea alias explicabo amet exercitationem accusantium!</a>
-  </div>
-  `

@@ -1,5 +1,7 @@
 body {
-  background-image: url(../img/backgrou.jpg);
+  background-image: url(../img/aC7zQKO6GH1UVuAB_K31hwncC23H-O3C1-CJODnHB_U.webp);
+    background-size: cover;
+
   display: flex;
   justify-content: center;
   display: flex;
@@ -30,14 +32,15 @@ body {
     align-items: center;
     border: black solid 5px;
 }
-
+.detalles_pokemon_pokedex{}
 .tabla_estadisticas{
     background-color: #00e0ff;
 }
 .pantalla{
     width:80%;
     height:80%;
-    background-color: rgb(255, 255, 255);
+    background-image: url(../img/d2temnn-33c666eb-69ab-4fea-99a6-58578928a1d1.png);
+    background-size: cover;
     border-top-left-radius: 40px;  
     border-top-right-radius: 40px;    
     border-bottom-left-radius: 50px; 
@@ -53,8 +56,10 @@ body {
 }
 .nombre_pokemon_pokedex{
     position: relative;
-    top: 20px;
+    top: -30%;
     font-family: 'Ketchum italic', Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 }
 .boton{
     width: 120px;
@@ -437,8 +442,11 @@ img{
 }
 
 .imagen_pokemon{
-    width:16vh;
+    width:30%;
     aspect-ratio: 1;
+    right: 36%;    
+    position: absolute;
+    image-rendering: optimizespeed;
 }
 #buscar_pokemon_nombre {
   width: 150px;
@@ -448,4 +456,8 @@ img{
   border: 2px solid #333;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.pokemon_id_pokedex{
+    position: absolute;
+    top: 11%;
 }

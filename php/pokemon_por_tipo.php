@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
 
 // Realizar la consulta para obtener los nombres de los Pokémon con el tipo dado
-$sql = "SELECT imagen, tipo, nombre FROM Pokemon WHERE tipo LIKE CONCAT('%', ?, '%')";
+$sql = "SELECT imagen, tipo, nombre, id FROM Pokemon WHERE tipo LIKE CONCAT('%', ?, '%')";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $tipo);
 $stmt->execute();
@@ -33,7 +33,8 @@ while ($row = $result->fetch_assoc()) {
     $pokemons[] = [
         "imagen" => $row['imagen'],
         "tipo" => $row['tipo'],
-        "nombre" => $row['nombre']
+        "nombre" => $row['nombre'],
+        "id" => $row['id']
     ];
 }
 
@@ -45,6 +46,7 @@ if (!empty($pokemons)) {
 
 $conn->close();
 ?>
+
 
 
 
