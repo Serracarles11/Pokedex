@@ -442,8 +442,11 @@ img{
 }
 
 .imagen_pokemon{
-    width:16vh;
+    width: 23vh;
     aspect-ratio: 1;
+    position: relative;
+    top: 0;
+    margin-left: -30px;
 }
 #buscar_pokemon_nombre {
   width: 150px;
@@ -456,5 +459,5 @@ img{
 }
 .pokemon_id_pokedex{
     position: absolute;
-    top: 11%;
+    top: 9%;
 }
