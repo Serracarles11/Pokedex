@@ -52,6 +52,7 @@ body {
 .nombre_pokemon_pokedex{
     position: relative;
     top: 20px;
+    font-family: 'Ketchum italic', Arial, Helvetica, sans-serif;
 }
 .boton{
     width: 120px;
