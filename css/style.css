@@ -1,463 +1,462 @@
 body {
-  background-image: url(../img/aC7zQKO6GH1UVuAB_K31hwncC23H-O3C1-CJODnHB_U.webp);
-    background-size: cover;
-
-  display: flex;
-  justify-content: center;
-  display: flex;
-  overflow: hidden;
-  background-size: cover;
-}
-.todo{
-    position: fixed;
-    left: 279.5px;
-}
-.rotomdex{
-    /* overflow: hidden; */
-}
-.cuerpo{
-    /* overflow: hidden; */
-
-    width:500px;
-    height:400px;
-    background-color: rgb(139, 4, 4);
-    border-top-left-radius: 100px;  
-    border-top-right-radius: 100px;    
-    border-bottom-left-radius: 80px; 
-    border-bottom-right-radius: 80px;
-    /* clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%); */
-    margin: 50px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    justify-content: center;    
-    align-items: center;
-    border: black solid 5px;
-}
-
-.tabla_estadisticas{
-    background-color: #00e0ff;
-}
-.pantalla{
-    width:80%;
-    height:80%;
-    background-image: url(../img/d2temnn-33c666eb-69ab-4fea-99a6-58578928a1d1.png);
-    background-size: cover;
-    border-top-left-radius: 40px;  
-    border-top-right-radius: 40px;    
-    border-bottom-left-radius: 50px; 
-    border-bottom-right-radius: 50px;
-    /* clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%); */
-    margin: 50px auto;
-    border: black solid 5px;
-    overflow: hidden;
-    display:flex ;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.nombre_pokemon_pokedex{
-    position: relative;
-    top: -30%;
-    font-family: 'Ketchum italic', Arial, Helvetica, sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-}
-.boton{
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at 35% 35%, #aaf, #00a); 
-    border-radius: 50%;
-    border: 4px solid #00e0ff;
-    box-shadow:
-    inset -10px -10px 20px rgba(255, 255, 255, 0.3),
-    0 0 20px rgba(0, 200, 255, 0.5);
-    margin: 50px auto;
-}
-.lupa{
-    width: 255px;
-    height: 272px;
-    background-color: #c0f2f8;
-    border-radius:50%;
-    margin-top: -54px;
-    margin-left: 77px;
-}
-.palo_lupa{
-    width: 500px;
-    height: 50px;
-    background-color: #c0f2f8;
-    rotate: 45deg;
-    margin-top: 90px;
-    margin-left: 150px;
-}
-.pie1{
-    position: absolute;
-
-    width: 100px;
-    height: 150px;
-    border-radius: 80%;
-    background-color: rgb(85,2, 2);
-    margin-top: -132px;
-    z-index: -5;
-    margin-left: 140px;
-    rotate: 43deg;
-    border: black solid 5px;
-
-    
-}
-.pie2{
-    position: absolute;
-    z-index: -5;
-
-    width: 100px;
-    height: 150px;
-    border-radius: 80%;
-    background-color: rgb(85, 2, 2);
-    margin-top: -122px;
-    margin-left: 293px;
-    rotate: -34deg;
-    border:black solid 5px;   
-}
-.ojo1{
-    position: relative;
-    width: 100px;
-    height: 150px;
-    border-radius: 80%;
-    background-color: rgb(85, 2, 2);
-    margin-top: 151px;
-    z-index: -5;
-    margin-left: 351px;
-    rotate: -43deg;
-    border:black solid 5px;   
-}
-.brazo1{
-    z-index: -5;
-    position: relative;
-    left: -296px;
-    top: -529px;
-}
-.brazo2{
-    z-index: -5;
-    position: relative;
-    left: 293px;
-    top: -1040px;
-    transform: scaleX(-1);
-}
-.tablet{
-    width: 36%;
-    height: 36%;
-    background-image: url(../img/1dXxMeVIJ-03iuWSMcKHvyOWjAiliEsxWgJmgrp-ucg.png);
-    /* background-position-y: 285px;     */
-    background-size: cover;
-    bottom: 10px;
-    position:fixed;
-    right: 50px;
-    border-radius: 7%;
-    display: flex;
-    border: 10px solid rgb(0, 0, 0);
-    overflow: hidden;
-}
-.parte_abajo_tablet {
-    position: absolute;
-    width: 1%;
-    height: 40%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20%;
-    right: 15.5px;
-    top: 30%;
-    animation: moverDerechaIzquierda 3s linear infinite;
-} 
-@keyframes moverDerechaIzquierda {
-    0% {
-      transform: translateX(200%); /* Comienza fuera por la derecha */
-    }
-    50% {
-      transform: translateX(50); /* Llega a su posición original */
-    }
-    100% {
-      transform: translateX(100); /* Llega a su posición original */
-    }
-}
+    background-image: url(../img/aC7zQKO6GH1UVuAB_K31hwncC23H-O3C1-CJODnHB_U.webp);
+      background-size: cover;
   
-
-.parte_arriba_tablet {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    background-color: rgb(0, 0, 0);
-    border-radius: 13%;
-    top: 30%;
-    left: -34%;
-}
-.volumen_1{
-    position: fixed;
-    width: 4%;
-    height: 1%;
-    background-color: rgb(0, 0, 0);
-    border-radius: 13%;
-    bottom: 0.7%;
-    right: 31.5%;
-}
-.volumen_2{
-    position: fixed;
-    width: 4%;
-    height: 1%;
-    background-color: rgb(0, 0, 0);
-    border-radius: 13%;
-    bottom: 0.7%;
-    right: 25.5%;
-}
-.info_1{
-    background-image: url(../img/png_cobertura.png);
-    position: absolute;
-    width: 20.5px;
-    background-size: cover;
-    rotate: 270deg;
-    top: 60px;
-    left: 3px;
-    aspect-ratio: 1/1;
-}
-.info_2{
-    background-image: url(../img/charge_4249910.png);
-    position: absolute;
-    width: 28px;
-    background-size: cover;
-    rotate: 270deg;
-    top: 14.5px;
-    left: -1.5px;
-    aspect-ratio: 1/1;
-}
-.reloj{
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    left: -7%;
-    rotate: 270deg;
-    font-size: 2.5em;
-}
-.fecha{
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    left: -2%;
-    rotate: 270deg;
-    font-size: 0.6em;
-}
-.camara{
     display: flex;
-    position: absolute;
-    top: 11%;
-    right: 6%;
-    rotate: 270deg;
-    width: 41px;
-    aspect-ratio: 1/1;
-    background-color: rgba(57, 57, 57, 0.93);
-    border-radius: 50%;
-    align-items: center;
     justify-content: center;
-}
-.camara_1{
-    width: 47%;
-    aspect-ratio: 1/1;
-}
-.pokeball{
     display: flex;
-    position: absolute;
-    bottom: 11%;
-    right: 6%;
-    rotate: 270deg;
-    width: 41px;
-    aspect-ratio: 1/1;
-    background-color: rgba(57, 57, 57, 0.93);
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-}
-.pokeball_1{
-    width: 47%;
-    aspect-ratio: 1/1;
-}
-
-
-
-
-/* dadadsad */
-
-
-.lock {
-    position: relative;
-    width: 18px;
-    height: 20px;
-    background: #ffffff;
-    border-radius: 34%;    
-
-}
-
-.lock::before {
-    content: "";
-    position: absolute;
-    left: -14px;
-    width: 13px;
-    height: 12px;
-    border: 2px solid #ffffff;
+    overflow: hidden;
+    background-size: cover;
+  }
+  .todo{
+      position: fixed;
+      left: 279.5px;
+  }
+  .rotomdex{
+      /* overflow: hidden; */
+  }
+  .cuerpo{
+      /* overflow: hidden; */
+  
+      width:500px;
+      height:400px;
+      background-color: rgb(139, 4, 4);
+      border-top-left-radius: 100px;  
+      border-top-right-radius: 100px;    
+      border-bottom-left-radius: 80px; 
+      border-bottom-right-radius: 80px;
+      /* clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%); */
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      justify-content: center;    
+      align-items: center;
+      border: black solid 5px;
+  }
+  
+  .tabla_estadisticas{
+      background-color: #00e0ff;
+  }
+  .pantalla{
+      width:80%;
+      height:80%;
+      background-image: url(../img/d2temnn-33c666eb-69ab-4fea-99a6-58578928a1d1.png);
+      background-size: cover;
+      border-top-left-radius: 40px;  
+      border-top-right-radius: 40px;    
+      border-bottom-left-radius: 50px; 
+      border-bottom-right-radius: 50px;
+      /* clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%); */
+      margin: 50px auto;
+      border: black solid 5px;
+      overflow: hidden;
+      display:flex ;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  .nombre_pokemon_pokedex{
+      position: relative;
+      top: 30%;
+      font-family: 'Ketchum italic', Arial, Helvetica, sans-serif;
+      margin-left: 20px;
+  }
+  .boton{
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle at 35% 35%, #aaf, #00a); 
+      border-radius: 50%;
+      border: 4px solid #00e0ff;
+      box-shadow:
+      inset -10px -10px 20px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(0, 200, 255, 0.5);
+      margin: 50px auto;
+  }
+  .lupa{
+      width: 255px;
+      height: 272px;
+      background-color: #c0f2f8;
+      border-radius:50%;
+      margin-top: -54px;
+      margin-left: 77px;
+  }
+  .palo_lupa{
+      width: 500px;
+      height: 50px;
+      background-color: #c0f2f8;
+      rotate: 45deg;
+      margin-top: 90px;
+      margin-left: 150px;
+  }
+  .pie1{
+      position: absolute;
+  
+      width: 100px;
+      height: 150px;
+      border-radius: 80%;
+      background-color: rgb(85,2, 2);
+      margin-top: -132px;
+      z-index: -5;
+      margin-left: 140px;
+      rotate: 43deg;
+      border: black solid 5px;
+  
+      
+  }
+  .pie2{
+      position: absolute;
+      z-index: -5;
+  
+      width: 100px;
+      height: 150px;
+      border-radius: 80%;
+      background-color: rgb(85, 2, 2);
+      margin-top: -122px;
+      margin-left: 293px;
+      rotate: -34deg;
+      border:black solid 5px;   
+  }
+  .ojo1{
+      position: relative;
+      width: 100px;
+      height: 150px;
+      border-radius: 80%;
+      background-color: rgb(85, 2, 2);
+      margin-top: 151px;
+      z-index: -5;
+      margin-left: 351px;
+      rotate: -43deg;
+      border:black solid 5px;   
+  }
+  .brazo1{
+      z-index: -5;
+      position: relative;
+      left: -296px;
+      top: -529px;
+  }
+  .brazo2{
+      z-index: -5;
+      position: relative;
+      left: 293px;
+      top: -1040px;
+      transform: scaleX(-1);
+  }
+  .tablet{
+      width: 36%;
+      height: 36%;
+      background-image: url(../img/1dXxMeVIJ-03iuWSMcKHvyOWjAiliEsxWgJmgrp-ucg.png);
+      /* background-position-y: 285px;     */
+      background-size: cover;
+      bottom: 10px;
+      position:fixed;
+      right: 50px;
+      border-radius: 7%;
+      display: flex;
+      border: 10px solid rgb(0, 0, 0);
+      overflow: hidden;
+  }
+  .parte_abajo_tablet {
+      position: absolute;
+      width: 1%;
+      height: 40%;
+      background-color: rgb(255, 255, 255);
+      border-radius: 20%;
+      right: 15.5px;
+      top: 30%;
+      animation: moverDerechaIzquierda 3s linear infinite;
+  } 
+  @keyframes moverDerechaIzquierda {
+      0% {
+        transform: translateX(200%); /* Comienza fuera por la derecha */
+      }
+      50% {
+        transform: translateX(50); /* Llega a su posición original */
+      }
+      100% {
+        transform: translateX(100); /* Llega a su posición original */
+      }
+  }
+    
+  
+  .parte_arriba_tablet {
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      background-color: rgb(0, 0, 0);
+      border-radius: 13%;
+      top: 30%;
+      left: -34%;
+  }
+  .volumen_1{
+      position: fixed;
+      width: 4%;
+      height: 1%;
+      background-color: rgb(0, 0, 0);
+      border-radius: 13%;
+      bottom: 0.7%;
+      right: 31.5%;
+  }
+  .volumen_2{
+      position: fixed;
+      width: 4%;
+      height: 1%;
+      background-color: rgb(0, 0, 0);
+      border-radius: 13%;
+      bottom: 0.7%;
+      right: 25.5%;
+  }
+  .info_1{
+      background-image: url(../img/png_cobertura.png);
+      position: absolute;
+      width: 20.5px;
+      background-size: cover;
+      rotate: 270deg;
+      top: 60px;
+      left: 3px;
+      aspect-ratio: 1/1;
+  }
+  .info_2{
+      background-image: url(../img/charge_4249910.png);
+      position: absolute;
+      width: 28px;
+      background-size: cover;
+      rotate: 270deg;
+      top: 14.5px;
+      left: -1.5px;
+      aspect-ratio: 1/1;
+  }
+  .reloj{
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: -7%;
+      rotate: 270deg;
+      font-size: 2.5em;
+  }
+  .fecha{
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: -2%;
+      rotate: 270deg;
+      font-size: 0.6em;
+  }
+  .camara{
+      display: flex;
+      position: absolute;
+      top: 11%;
+      right: 6%;
+      rotate: 270deg;
+      width: 41px;
+      aspect-ratio: 1/1;
+      background-color: rgba(57, 57, 57, 0.93);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+  }
+  .camara_1{
+      width: 47%;
+      aspect-ratio: 1/1;
+  }
+  .pokeball{
+      display: flex;
+      position: absolute;
+      bottom: 11%;
+      right: 6%;
+      rotate: 270deg;
+      width: 41px;
+      aspect-ratio: 1/1;
+      background-color: rgba(57, 57, 57, 0.93);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+  }
+  .pokeball_1{
+      width: 47%;
+      aspect-ratio: 1/1;
+  }
+  
+  
+  
+  
+  /* dadadsad */
+  
+  
+  .lock {
+      position: relative;
+      width: 18px;
+      height: 20px;
+      background: #ffffff;
+      border-radius: 34%;    
+  
+  }
+  
+  .lock::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      width: 13px;
+      height: 12px;
+      border: 2px solid #ffffff;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(255, 255, 255);
       border-bottom-width: 2px;
       border-bottom-style: solid;
       border-bottom-color: rgb(255, 255, 255);
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(255, 255, 255);
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    background: transparent;
-    rotate: 270deg;
-    top: 2px;
-}
-.candado{
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    left: 9%;
-}
-.reloj_pequeño{
-    position: absolute;
-    bottom: 6%;
-    left: 0%;
-    rotate: 270deg;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap:25px; 
-    align-items: center;
-    scrollbar-width: none;
-
-}
-
-.cuadro {
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  transition: transform 0.2s;
-padding-right: 5px; 
-scrollbar-width: none;
-
-
-}
-
-.cuadro:hover {
-  transform: scale(1.05);
-}
-.pantalla_uso{
-width: 87%;
-  right: 6%;
-  height: 89%;
-  position: absolute;
-  top: 5%;
-  bottom: 5%;
-  overflow: hidden;
-  overflow-y: auto;
-      hidden: scroll;
-
-    scrollbar-width: none;
-
-
-}
-
-.agua {
-    background-size: cover;
-  aspect-ratio: 1 / 1; 
-  border-radius: 10px;
-  transition: transform 0.2s;
-    padding-right: 5px; 
-
-}
-
-.siguiente_pokemon{
-    position: absolute;
-    width: 10%;
-    height: 20%;
-    left: 55%;
-    top: 40%;
-
-}
-.anterior_pokemon{
-    position: absolute;
-    width: 10%;
-    height: 20%;
-    right: 55%;
-    top: 40%;
-}
-img{
-    width: 100%;
-}
-.img_izquierda{
-    width: 100%;
-    rotate: 180deg;
-    
-}
-.pokemon_tablet{
-    position: absolute;
-    background-color: beige;
-    width: 18%;
-    height: 40%;
-    left: 41%;
-    top: 24%;
-    /* background-image: url(../img/392.png); */
-    background-size: cover;
-}
-
-.caracteristicas_tablet {
-    position: relative; 
-    aspect-ratio: 3 / 1;
-    border-radius: 10px;
-    padding-right: 5px;
-    /* background-color: #00a; */
-    width: 100%; 
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      background: transparent;
+      rotate: 270deg;
+      top: 2px;
+  }
+  .candado{
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: 9%;
+  }
+  .reloj_pequeño{
+      position: absolute;
+      bottom: 6%;
+      left: 0%;
+      rotate: 270deg;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap:25px; 
+      align-items: center;
+      scrollbar-width: none;
   
-.grid_caracteristicas_tablet {
+  }
+  
+  .cuadro {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  padding-right: 5px; 
+  scrollbar-width: none;
+  
+  
+  }
+  
+  .cuadro:hover {
+    transform: scale(1.05);
+  }
+  .pantalla_uso{
+  width: 87%;
+    right: 6%;
+    height: 89%;
     position: absolute;
+    top: 5%;
     bottom: 5%;
-    left: 10%;
-    right: 10%; 
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-}
-.img_mega{
-    width: 40%;
-}
-.img_mega2{
-    width: 50%;
-}
-.img_mega3{
-    width: 50%;
-}
-.cruz_atras{
-    position: absolute;
-    width: 10%;
-    right: 0;
-}
-
-.imagen_pokemon{
-    width: 23vh;
-    aspect-ratio: 1;
-    position: relative;
-    top: 0;
-    margin-left: -30px;
-}
-#buscar_pokemon_nombre {
-  width: 150px;
-  height: 150px;
-  font-size: 16px;
-  text-align: center;
-  border: 2px solid #333;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-.pokemon_id_pokedex{
-    position: absolute;
-    top: 9%;
-}
+    overflow: hidden;
+    overflow-y: auto;
+        hidden: scroll;
+  
+      scrollbar-width: none;
+  
+  
+  }
+  
+  .agua {
+      background-size: cover;
+    aspect-ratio: 1 / 1; 
+    border-radius: 10px;
+    transition: transform 0.2s;
+      padding-right: 5px; 
+  
+  }
+  
+  .siguiente_pokemon{
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      left: 55%;
+      top: 40%;
+  
+  }
+  .anterior_pokemon{
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      right: 55%;
+      top: 40%;
+  }
+  img{
+      width: 100%;
+  }
+  .img_izquierda{
+      width: 100%;
+      rotate: 180deg;
+      
+  }
+  .pokemon_tablet{
+      position: absolute;
+      background-color: beige;
+      width: 18%;
+      height: 40%;
+      left: 41%;
+      top: 24%;
+      /* background-image: url(../img/392.png); */
+      background-size: cover;
+  }
+  
+  .caracteristicas_tablet {
+      position: relative; 
+      aspect-ratio: 3 / 1;
+      border-radius: 10px;
+      padding-right: 5px;
+      /* background-color: #00a; */
+      width: 100%; 
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+  }
+    
+  .grid_caracteristicas_tablet {
+      position: absolute;
+      bottom: 5%;
+      left: 10%;
+      right: 10%; 
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+  }
+  .img_mega{
+      width: 40%;
+  }
+  .img_mega2{
+      width: 50%;
+  }
+  .img_mega3{
+      width: 50%;
+  }
+  .cruz_atras{
+      position: absolute;
+      width: 10%;
+      right: 0;
+  }
+  
+  .imagen_pokemon{
+      width: 16vh;
+      aspect-ratio: 1;
+      position: relative;
+      top: 0;
+      margin-left: -170px;
+  }
+  #buscar_pokemon_nombre {
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  .pokemon_id_pokedex{
+      position: absolute;
+      top: 7%;
+  }
