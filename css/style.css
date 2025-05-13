@@ -31,8 +31,8 @@ body {
     border: black solid 5px;
 }
 
-.tabla_estadisticas{
-    background-color: #00e0ff;
+.descripcion_pokemon{
+    font-family: 'Times New Roman', Times, serif;
 }
 .pantalla{
     width:80%;
@@ -437,8 +437,11 @@ img{
 }
 
 .imagen_pokemon{
-    width:16vh;
+    width: 25vh;
     aspect-ratio: 1;
+    position: relative;
+    top: -30px;
+    margin-left: -30px;
 }
 #buscar_pokemon_nombre {
   width: 150px;

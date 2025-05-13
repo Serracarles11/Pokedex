@@ -17,14 +17,15 @@ if ($conn->connect_error) {
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Consulta para obtener la imagen, nombre y tipo del Pokémon
-$sql = "SELECT imagen, tipo, nombre FROM Pokemon WHERE id = $id";
+$sql = "SELECT imagen, tipo, nombre, descripcion FROM Pokemon WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result && $row = $result->fetch_assoc()) {
     echo json_encode([
         "imagen" => $row['imagen'],
         "tipo" => $row['tipo'],
-        "nombre" => $row['nombre']
+        "nombre" => $row['nombre'],
+        "descripcion" => $row['descripcion']
     ]);
 } else {
     echo json_encode(["error" => "No se encontró el Pokémon"]);
