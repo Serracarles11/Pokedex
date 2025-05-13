@@ -32,7 +32,7 @@ body {
     align-items: center;
     border: black solid 5px;
 }
-.detalles_pokemon_pokedex{}
+
 .tabla_estadisticas{
     background-color: #00e0ff;
 }
@@ -442,11 +442,8 @@ img{
 }
 
 .imagen_pokemon{
-    width:30%;
+    width:16vh;
     aspect-ratio: 1;
-    right: 36%;    
-    position: absolute;
-    image-rendering: optimizespeed;
 }
 #buscar_pokemon_nombre {
   width: 150px;

@@ -708,5 +708,14 @@ document.addEventListener('click', e => {
 
 
 
+// Tabla de Habilidades
 
 
+
+
+document.getElementById('pantalla').innerHTML = `
+  <div class="tabla_estadisticas">
+   <div class="detalles_pokemon_pokedex">
+    <a class="descripcion_pokemon"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, asperiores facere amet quaerat repellat officia voluptatem dolor alias accusamus iste quibusdam ratione dolorum facilis aliquam tempore laudantium minima, corrupti fugiat. Veritatis omnis, possimus distinctio minus, animi obcaecati voluptas nihil hic laudantium dolores autem iure ea alias explicabo amet exercitationem accusantium!</a>
+  </div>
+  `
