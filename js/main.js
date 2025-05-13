@@ -338,6 +338,10 @@ function createAll(tipo){
             <div class="pokemon_id_pokedex">
             <h1>${pokemon1.id}</h1>
           </div>
+          <div class="detalles_pokemon_pokedex">
+          <a class="descripcion_pokemon"> ${pokemon1.descripcion}</a>
+          </div>
+
         `;
       pokemon=`${pokemon1.nombre}`;
 
@@ -476,6 +480,9 @@ function obtenerImagenPokemon(id) {
           <div class="pokemon_id_pokedex">
             <h1>${data.id}</h1>
           </div>
+          <div class="detalles_pokemon_pokedex">
+            <a class="descripcion_pokemon"> ${data.descripcion}</a>
+          </div>
           
         `;
       } else {
@@ -607,6 +614,7 @@ function obtenerMega(nombre) {
         <div class="pokemon_id_pokedex">
           <h1>${mega.id}</h1>
         </div>
+
       `;
     })
     .catch(err => {
