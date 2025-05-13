@@ -1,9 +1,10 @@
 body {
-  background-color: #ffffff;
+  background-image: url(../img/backgrou.jpg);
   display: flex;
   justify-content: center;
   display: flex;
   overflow: hidden;
+  background-size: cover;
 }
 .todo{
     position: fixed;
@@ -28,10 +29,11 @@ body {
     justify-content: center;    
     align-items: center;
     border: black solid 5px;
+}
 
-    
-
-    }
+.tabla_estadisticas{
+    background-color: #00e0ff;
+}
 .pantalla{
     width:80%;
     height:80%;
