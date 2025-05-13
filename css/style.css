@@ -432,11 +432,7 @@ img{
     width: 10%;
     right: 0;
 }
-.pokemon{
-    width: 50%;
-    height: 50%;
-    background-color: #00a;
-}
+
 .imagen_pokemon{
     width:16vh;
     aspect-ratio: 1;
