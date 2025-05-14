@@ -609,7 +609,7 @@ fetch(`/php/ensenyar_megaevolucion.php?nombre=${encodeURIComponent(nombreMega)}`
         <h1>${mega.nombre}</h1>
       </div>
       <div class="pokemon">
-        <img src="${mega.imagen}" class="imagen_pokemon">
+        <img src="${mega.imagen}" class="imagen_pokemon_2">
       </div>
       <div class="pokemon_id_pokedex">
         <h1>${mega.id}</h1>
@@ -689,7 +689,7 @@ fetch(`/php/sacar_gigamax.php?nombre2=${encodeURIComponent(nombreGigamax)}`)
         <h1>${gmax.nombre}</h1>
       </div>
       <div class="pokemon">
-        <img src="${gmax.imagen}"class="imagen_pokemon">
+        <img src="${gmax.imagen}"class="imagen_pokemon_2">
       </div>
       <div class="pokemon_id_pokedex">
         <h1>${gmax.id}</h1>
